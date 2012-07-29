@@ -2,16 +2,30 @@ define [
   "angular"
   "TodoService"
 ], (angular, TodoService) -> 
+
   "use strict"
   
+  # declaring angular module controllers
+  # you can see it as a "package" controllers
+  # if we had several controllers, each one could be 
+  # attached to this module, then juste one dependency
+  # give us ability to work on any controllers
+  # this module depends only on service module
   controllers = angular.module "controllers", ["services"]
 
-  controllers.controller "TodoController", ["$scope", "$http", "TodoService", ($scope, $http, service) ->
+  # this way of declaring controllers is best practice i've found,
+  # others either add garbage on global scope, or is not compatible with 
+  # minification
+  controllers.controller "TodoController", ["$scope", "TodoService", ($scope, service) ->
 
+    #on load we get our list of models
     service.list((todos) -> 
       $scope.todos = todos
     )
 
+    # all method declared on $scope are directly usable within template
+    # as values
+    # see /public/templates/list.html
     $scope.addTodo  = ()  -> 
       todo = {
         label: $scope.todoText,

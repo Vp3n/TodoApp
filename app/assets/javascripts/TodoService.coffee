@@ -2,8 +2,13 @@ define ["angular", "angular-resource"], (angular, resource) ->
 
 	"use strict"
 
+	# declaring our angular services modules
 	services = angular.module "services", []
 
+	# this class provide client/server communication
+	# trough our REST API
+	# using coffee script class declaration
+	# for clarity
 	class TodoService
 
 	  constructor: (@$http) -> 
@@ -28,9 +33,13 @@ define ["angular", "angular-resource"], (angular, resource) ->
 	    @$http.put(url, todo).success -> 	  
 	
 
+	# construct our service, here i can create new objet 
+	# knowing the fact that angular service are singleton
+	# thus we always have a single new call
 	services.factory "TodoService", ["$http", ($http) ->
 		new TodoService($http)
 	]
 
+	# returning created service for others amd modules
 	services
 

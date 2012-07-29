@@ -11,6 +11,9 @@ object Application extends Controller {
     Ok(views.html.index())
   }
 
+  /*
+  * Provide Router object to client side API
+  */
   def javascriptRoutes = Action { implicit request =>
     Ok(
       Routes.javascriptRouter("Router") (

@@ -1,0 +1,17 @@
+@(title: String)(content: Html)
+@import helper._
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Application.javascriptRoutes")"></script>
+        <script data-main="@routes.Assets.at("javascripts/main.js")" src="@routes.Assets.at("javascripts/require-jquery.js")"></script>
+    </head>
+    <body>
+        <div ng-view></div>
+    </body>
+</html>

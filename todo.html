@@ -2,15 +2,16 @@
 <html ng-app>
     <head>
         <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+        <script src="http://code.angularjs.org/angular-resource-1.0.1.min.js"></script>
         <script src="todo.js"></script>
         <style>
             .done-true {
-                text-decoration: line-through;;
+                text-decoration: line-through;
                 color: grey;
             }
         </style>
     </head>
-    <h2>Todo</h2>
+    <h2>Todo List</h2>
         <div ng-controller="TodoController">
             <span>{{remaining()}} of {{todos.length}} remaining</span>
             [ <a href="" ng-click="archive()">archive</a> ]

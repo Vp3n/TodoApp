@@ -33,6 +33,14 @@ send me any pull requests or open issues if you see some awfull things :)
 On otherside, if this is helpful let me know too.
 
 
+TODO
+----
+- Provide tests for both backend and frontend
+- Handle undone action
+- Archive view to add some angular code
+
+
+
 
 
 

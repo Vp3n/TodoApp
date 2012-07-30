@@ -2,14 +2,11 @@ require
 	shim: 
 		"angular": 
 			exports: "angular"
-		"angular-resource":
-			deps: ["angular"]
-			exports: "angular-resource"
 	[
 		"angular"
 		"TodoApp",
 	], (angular) -> 
-	
+
 		"use strict"
 
 		# We need to declare our app before angular scan the dom

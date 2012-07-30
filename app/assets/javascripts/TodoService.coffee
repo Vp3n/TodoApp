@@ -1,4 +1,4 @@
-define ["angular", "angular-resource"], (angular, resource) ->
+define ["angular"], (angular) ->
 
 	"use strict"
 

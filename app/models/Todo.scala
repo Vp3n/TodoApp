@@ -12,7 +12,7 @@ case class Todo(id: Pk[Long], label: String, isDone: Boolean, isArchived: Boolea
 
 object Todo {
 
-  /*
+  /**
   * Parser JSON to Todo object
   * used to provide implicit parameter to Json.fromJson[T]()
   */
@@ -35,6 +35,9 @@ object Todo {
     }
   }
 
+  /**
+  * Todo object to json, provide implicit parameters to Json.as[T()
+  */
   implicit object TodoSerializer extends Writes[Todo] {
     def writes(todo: Todo) = Json.toJson(
         Json.obj(
@@ -46,9 +49,20 @@ object Todo {
       )
   }
 
+  /**
+  * simpe constructor for todo object, since we only need to provide label
+  * to create a new Todo
+  */
   def apply(label: String) = new Todo(NotAssigned, label, false, false)
+
+  /**
+  * used to recreate object after db insert
+  */
   def apply(id: Long, todo: Todo) = new Todo(Id(id), todo.label, todo.isDone, todo.isArchived)
 
+  /**
+  * Anorm parser for Todo, used to map sql to object
+  **/
   val mapper = {
     get[Pk[Long]]("id") ~
     get[String]("label") ~
@@ -85,6 +99,11 @@ object Todo {
     } 
   }
 
+  /**
+  * Little hack here to provide a "WHERE IN" sql clause
+  * if anyone has a better idea or if it is possible directly with anorm
+  * please tell me
+  */
   def archive(todos: List[Todo]) {
     val ids = todos.map(_.id) 
     val in = "id in (%s)".format(

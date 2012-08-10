@@ -17,6 +17,9 @@ which i have added a play2/scala backend
 Beside, all angular code is wrapped in requirejs amd modules
 and written with coffee script
 
+You can read more about this app in my blog (french) 
+-> http://vivian-pennel.fr/blog/mon-avis-play2-scala-todoapp
+
 Objectives
 ----------
 

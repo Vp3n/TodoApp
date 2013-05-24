@@ -55,6 +55,7 @@ On otherside, if this is helpful let me know too.
 Changelog
 ---------
 2013-05-24 : Upgrade to play 2.1.1
+
 2012-08-10 : Initial release (play 2.0)
 
 

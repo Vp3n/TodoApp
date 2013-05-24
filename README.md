@@ -20,6 +20,22 @@ and written with coffee script
 You can read more about this app in my blog (french) 
 -> http://vivian-pennel.fr/blog/mon-avis-play2-scala-todoapp
 
+
+Installation
+----------
+To run this app you will need to install play 2.1.1 first http://www.playframework.com/documentation/2.1.1/Installing
+Then just "cd" to your app dir and launch
+
+```sh
+play run
+```
+
+if you want to hack a little, enable auto compilation
+```sh
+play ~run
+```
+
+
 Objectives
 ----------
 
@@ -36,11 +52,10 @@ send me any pull requests or open issues if you see some awfull things :)
 On otherside, if this is helpful let me know too.
 
 
-TODO
-----
-- Provide tests for both backend and frontend
-- Handle undone action
-- Archive view to add some angular code
+Changelog
+---------
+2013-05-24 : Upgrade to play 2.1.1
+2012-08-10 : Initial release (play 2.0)
 
 
 

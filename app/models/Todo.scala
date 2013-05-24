@@ -25,12 +25,12 @@ object Todo {
         }.getOrElse {
           NotAssigned
         }
-        Todo(        
+        JsSuccess(Todo(
           pkId,
           (json \ "label").as[String],
           (json \ "done").as[Boolean],
           (json \ "archived").as[Boolean]
-        )
+        ))
       case _ => throw new RuntimeException("Todo object expected")
     }
   }

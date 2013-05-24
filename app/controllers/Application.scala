@@ -36,7 +36,7 @@ object Application extends Controller {
     val body = request.body
     val datas = body.asJson
     datas.map { json => 
-      val todo = Json.fromJson[Todo](json)
+      val todo = Json.fromJson[Todo](json).get
       val createdTodo = Todo.create(todo)
       val createdTodoJson = Json.toJson[Todo](createdTodo)
       Ok(createdTodoJson)
@@ -49,7 +49,7 @@ object Application extends Controller {
     val body = request.body
     val datas = body.asJson
     datas.map { json => 
-      val todo = Json.fromJson[Todo](json)
+      val todo = Json.fromJson[Todo](json).get
       Todo.update(todo)
       Ok(Json.toJson[Todo](todo))
     }.getOrElse {
